@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Elements Dynamically</title>
+    <script>
+        function addElement() {
+            var listItemText = document.getElementById("listItemInput").value;
+            if (listItemText === "") {
+                alert("Please enter text for the list item.");
+                return;
+            }
+            var li = document.createElement("li");
+            li.textContent = listItemText;
+            document.getElementById("dynamicList").appendChild(li);
+            document.getElementById("listItemInput").value = ""; // Clear the input
+        }
+    </script>
+</head>
+<body>
+
+    <h2>Add Elements Dynamically Example</h2>
+
+    <input type="text" id="listItemInput" placeholder="Enter list item">
+    <button onclick="addElement()">Add Item</button>
+
+    <ul id="dynamicList"></ul>
+
+</body>
+</html>
