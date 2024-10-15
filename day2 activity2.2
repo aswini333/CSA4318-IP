@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Events Example</title>
+    <script>
+        function handleMouseOver() {
+            document.getElementById("hoverElement").style.color = "blue";
+            document.getElementById("hoverElement").innerText = "Mouse Over!";
+        }
+
+        function handleMouseOut() {
+            document.getElementById("hoverElement").style.color = "black";
+            document.getElementById("hoverElement").innerText = "Hover over me!";
+        }
+
+        function handleLoad() {
+            alert("Page has loaded successfully!");
+        }
+
+        window.onload = handleLoad; // Attach load event
+    </script>
+</head>
+<body>
+
+    <h2>Mouse Events Example</h2>
+
+    <p id="hoverElement" onmouseover="handleMouseOver()" onmouseout="handleMouseOut()">Hover over me!</p>
+
+</body>
+</html>
