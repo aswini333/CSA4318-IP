@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Text Style</title>
+    <script>
+        async function updateTextStyle() {
+            try {
+                // Simulating a server response
+                const response = await fetch('https://api.example.com/getMessage'); // Replace with your API
+                const data = await response.json();
+
+                // Update the text and style of the message
+                const messageElement = document.getElementById("message");
+                messageElement.innerText = data.message;
+                messageElement.style.color = data.color; // Assuming the server sends a color
+                messageElement.style.fontSize = data.fontSize; // Assuming the server sends a fontSize
+            } catch (error) {
+                console.error("Error fetching message:", error);
+            }
+        }
+    </script>
+</head>
+<body onload="updateTextStyle()">
+
+    <h2>Update Text Message Style</h2>
+    <p id="message">This message will be updated.</p>
+
+</body>
+</html>
