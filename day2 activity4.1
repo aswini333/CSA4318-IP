@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receive Server Message</title>
+    <script>
+        async function receiveServerMessage() {
+            try {
+                const response = await fetch('https://api.example.com/getTextMessage'); // Replace with your API
+                const data = await response.json(); // Convert the response to an object
+
+                // Display the message in the webpage
+                document.getElementById("serverMessage").innerText = data.message;
+            } catch (error) {
+                console.error("Error fetching message:", error);
+            }
+        }
+    </script>
+</head>
+<body onload="receiveServerMessage()">
+
+    <h2>Server Message</h2>
+    <p id="serverMessage">Waiting for server message...</p>
+
+</body>
+</html>
