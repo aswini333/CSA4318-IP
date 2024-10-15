@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input and Output Example</title>
+    <script>
+        function showOutput() {
+            var name = document.getElementById("name").value;
+            var age = document.getElementById("age").value;
+            document.getElementById("output").innerHTML = "Hello, " + name + ". You are " + age + " years old.";
+        }
+    </script>
+</head>
+<body>
+
+    <h2>Input and Output Example</h2>
+
+    <label for="name">Enter your name:</label>
+    <input type="text" id="name" placeholder="Your Name">
+    <br><br>
+
+    <label for="age">Enter your age:</label>
+    <input type="number" id="age" placeholder="Your Age">
+    <br><br>
+
+    <button onclick="showOutput()">Show Output</button>
+
+    <p id="output"></p>
+
+</body>
+</html>
