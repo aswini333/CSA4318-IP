@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Using Transitions and Transformations</title>
+    <style>
+        .transform-box {
+            width: 200px;
+            height: 200px;
+            background-color: #3f51b5;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.5s ease; /* Transition for transformation */
+        }
+
+        .transform-box:hover {
+            transform: scale(1.5) rotate(45deg); /* Scale up and rotate */
+        }
+
+        .transition-box {
+            width: 200px;
+            height: 200px;
+            background-color: #009688;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.5s ease, width 0.5s ease; /* Transition for background and width */
+        }
+
+        .transition-box:hover {
+            background-color: #e91e63; /* Change color on hover */
+            width: 300px; /* Change width on hover */
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Understanding Transitions and Transformations</h2>
+
+    <div class="transform-box">
+        Hover to Transform
+    </div>
+
+    <div class="transition-box" style="margin-top: 20px;">
+        Hover to Transition
+    </div>
+
+</body>
+</html>
