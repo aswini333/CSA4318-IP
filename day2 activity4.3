@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display JSON Data</title>
+    <script>
+        async function displayJSONData() {
+            try {
+                const response = await fetch('https://api.example.com/getData'); // Replace with your API
+                const data = await response.json(); // Assuming data is an array of objects
+
+                const displayElement = document.getElementById("jsonData");
+                data.forEach(item => {
+                    const paragraph = document.createElement("p");
+                    paragraph.innerText = `ID: ${item.id}, Name: ${item.name}`;
+                    displayElement.appendChild(paragraph);
+                });
+            } catch (error) {
+                console.error("Error fetching JSON data:", error);
+            }
+        }
+    </script>
+</head>
+<body onload="displayJSONData()">
+
+    <h2>JSON Data from Server</h2>
+    <div id="jsonData">Loading data...</div>
+
+</body>
+</html>
