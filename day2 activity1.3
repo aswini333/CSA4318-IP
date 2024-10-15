@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exception Handling</title>
+    <script>
+        function handleException() {
+            var input = document.getElementById("number").value;
+            try {
+                if (input == "") throw "Input is empty";
+                if (isNaN(input)) throw "Not a number";
+                if (input < 1 || input > 10) throw "Number out of range (1-10)";
+                document.getElementById("output").innerHTML = "Valid Input: " + input;
+            } catch (err) {
+                document.getElementById("output").innerHTML = "Error: " + err;
+            } finally {
+                document.getElementById("output").innerHTML += " (Exception Handling Complete)";
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <h2>Exception Handling Example</h2>
+
+    <label for="number">Enter a number (1-10):</label>
+    <input type="text" id="number">
+    <br><br>
+
+    <button onclick="handleException()">Submit</button>
+
+    <p id="output"></p>
+
+</body>
+</html>
